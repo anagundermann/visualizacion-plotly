@@ -1,0 +1,323 @@
+/*-- scss:defaults --*/
+
+$body-bg: #F7F8F9;
+$presentation-heading-color: #2f2aa3;
+$presentation-heading-font-weight: 500;
+
+
+/*-- scss:rules --*/
+
+.reveal h1,
+.reveal h2,
+.reveal h3 {
+  color: #2f2aa3;
+
+}
+
+.reveal h2 {
+  border-bottom: 4px solid #2f2aa3;
+  padding-bottom: 0.2em;
+}
+
+.reveal .texto-pequeno {
+  font-size: 0.75em;
+}
+
+.reveal section.sin-titulo h2 {
+  display: none;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.reveal .grafico-centrado {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.reveal .grafico-coordinado .cell-output-display {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+
+
+.reveal .intro-plotly {
+  display: grid;
+  grid-template-columns: 32% 68%;
+  align-items: center;
+  min-height: 420px;
+  transform: translateY(80px);
+}
+
+.reveal .intro-texto {
+  font-size: 2.4em;
+  font-weight: 400;
+  color: #2f2aa3;
+  text-align: left;
+}
+
+.reveal .pie-stage {
+  position: relative;
+  width: 480px;
+  height: 320px;
+  margin: 0 auto;
+}
+
+.reveal .pie-piece {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.reveal .pie-a {
+  background: #2f2aa3;
+  left: 40px;
+  top: 80px;
+}
+
+.reveal .pie-b {
+  background: #e07a5f;
+  left: 185px;
+  top: 35px;
+}
+
+.reveal .pie-c {
+  background: #3aa17e;
+  left: 320px;
+  top: 125px;
+}
+
+/* Estado final */
+
+.reveal .pie-final .pie-a {
+  left: 150px;
+  top: 95px;
+}
+
+.reveal .pie-final .pie-b {
+  left: 210px;
+  top: 95px;
+}
+
+.reveal .pie-final .pie-c {
+  left: 180px;
+  top: 155px;
+}
+
+
+
+/* Animación introductoria de Plotly: círculos a gráfico circular */
+
+/* Animación introductoria de Plotly: círculos a gráfico circular */
+
+.reveal .pie-armado .pie-piece {
+  width: 240px;
+  height: 240px;
+  left: 120px;
+  top: 40px;
+  border-radius: 50%;
+}
+
+.reveal .pie-armado .pie-a {
+  background: conic-gradient(
+    #2f2aa3 0deg 130deg,
+    transparent 130deg 360deg
+  );
+}
+
+.reveal .pie-armado .pie-b {
+  background: conic-gradient(
+    transparent 0deg 130deg,
+    #e07a5f 130deg 245deg,
+    transparent 245deg 360deg
+  );
+}
+
+.reveal .pie-armado .pie-c {
+  background: conic-gradient(
+    transparent 0deg 245deg,
+    #3aa17e 245deg 360deg
+  );
+}
+
+.reveal .pie-armado::after {
+  content: "";
+  position: absolute;
+  width: 95px;
+  height: 95px;
+  left: 192px;
+  top: 112px;
+  border-radius: 50%;
+  background: #F7F8F9;
+}
+
+
+
+
+
+
+
+
+/* Animación Plotly en una sola diapositiva */
+
+.reveal .intro-plotly-unica {
+  display: grid;
+  grid-template-columns: 32% 68%;
+  align-items: center;
+  min-height: 520px;
+  transform: translateY(0px);
+}
+
+.reveal .intro-plotly-unica .intro-texto {
+  font-size: 2.4em;
+  font-weight: 400;
+  color: #2f2aa3;
+  text-align: left;
+}
+
+.reveal .pie-stage-unico {
+  position: relative;
+  width: 480px;
+  height: 320px;
+  margin: 0 auto;
+  transform: translate(180px, 0px);
+}
+
+.reveal .pie-stage-unico .pie-piece {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  transition:
+    left 0.8s ease,
+    top 0.8s ease,
+    width 0.8s ease,
+    height 0.8s ease;
+}
+
+/* Estado inicial */
+
+.reveal .pie-stage-unico .pie-a {
+  background: #2f2aa3;
+  left: 40px;
+  top: 80px;
+}
+
+.reveal .pie-stage-unico .pie-b {
+  background: #e07a5f;
+  left: 185px;
+  top: 35px;
+}
+
+.reveal .pie-stage-unico .pie-c {
+  background: #3aa17e;
+  left: 320px;
+  top: 125px;
+}
+
+/* Los fragments funcionan solo como disparadores */
+
+.reveal .pie-stage-unico .marcador {
+  display: none;
+}
+
+/* Segundo estado: los círculos se acercan */
+
+.reveal .pie-stage-unico:has(.estado-2.visible) .pie-a {
+  left: 150px;
+  top: 95px;
+}
+
+.reveal .pie-stage-unico:has(.estado-2.visible) .pie-b {
+  left: 210px;
+  top: 95px;
+}
+
+.reveal .pie-stage-unico:has(.estado-2.visible) .pie-c {
+  left: 180px;
+  top: 155px;
+}
+
+/* Tercer estado: gráfico circular */
+
+.reveal .pie-stage-unico:has(.estado-3.visible) .pie-piece {
+  width: 240px;
+  height: 240px;
+  left: 120px;
+  top: 40px;
+}
+
+.reveal .pie-stage-unico:has(.estado-3.visible) .pie-a {
+  background: conic-gradient(
+    #2f2aa3 0deg 130deg,
+    transparent 130deg 360deg
+  );
+}
+
+.reveal .pie-stage-unico:has(.estado-3.visible) .pie-b {
+  background: conic-gradient(
+    transparent 0deg 130deg,
+    #e07a5f 130deg 245deg,
+    transparent 245deg 360deg
+  );
+}
+
+.reveal .pie-stage-unico:has(.estado-3.visible) .pie-c {
+  background: conic-gradient(
+    transparent 0deg 245deg,
+    #3aa17e 245deg 360deg
+  );
+}
+
+/* Agujero central de la dona en el tercer estado */
+
+.reveal .pie-stage-unico:has(.estado-3.visible)::after {
+  content: "";
+  position: absolute;
+  width: 95px;
+  height: 95px;
+  left: 192px;
+  top: 112px;
+  border-radius: 50%;
+  background: #F7F8F9;
+  z-index: 10;
+}
+
+/* Logo Plotly */
+
+.reveal .plotly-logo-oficial {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.reveal .plotly-logo-oficial img {
+  width: 430px;
+  height: auto;
+}
+
+/* Reduce solo el tamaño del botón "Ver código" */
+
+.reveal .code-fold summary {
+  font-size: 0.7em;
+}
+
+.reveal .code-fold > summary {
+  font-size: 0.7em;
+}
+
+.reveal .code-fold pre,
+.reveal .code-fold code {
+  font-size: 1em;
+}
+
+.plotly-box {
+  background: #f0f0fa;
+  border-left: 6px solid #2f2aa3;
+  padding: 0.7em 1em;
+  margin: 0.7em 0;
+  border-radius: 4px;
+}
